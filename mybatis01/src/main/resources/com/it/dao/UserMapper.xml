@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace:可以随意指定! -->
+<mapper namespace="com.it.domain.User">
+
+    <!-- resultType:指定Bean的包名和类名! -->
+    <select id="findAll" resultType="com.it.domain.User">
+        select * from user
+    </select>
+
+</mapper>

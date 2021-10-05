@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.it.dao.UserDao">
+
+    <resultMap id="users" type="User">
+        <id column="uid" property="id"></id>
+        <result column="uname" property="username"></result>
+        <result column="password" property="password"></result>
+        <result column="address" property="address"></result>
+        <result column="birthday" property="birthday"></result>
+        <result column="sex" property="sex"></result>
+
+        <!--Collection : 映射accountList 属性
+               property: 对应的属性名
+               ofType: 集合中的元素类型: association 中javaType效果一致
+               collection需要ofType搭配使用
+        -->
+
+        <collection property="accountList" ofType="account">
+            <id column="id" property="id"></id>
+            <result column="name" property="name"></result>
+            <result column="money" property="money"></result>
+            <result column="uids" property="uids"></result>
+        </collection>
+    </resultMap>
+
+    <select id="findAll" resultMap="users">
+         select * from user u left join account a on u.uid = a.uids
+    </select>
+</mapper>

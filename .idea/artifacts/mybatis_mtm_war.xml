@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="mybatis-mtm:war">
+    <output-path>$PROJECT_DIR$/mybatis-mtm/target</output-path>
+    <root id="archive" name="myarchetypewebapp.war">
+      <element id="artifact" artifact-name="mybatis-mtm:war exploded" />
+    </root>
+  </artifact>
+</component>

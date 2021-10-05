@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--引入外部属性文件-->
+    <properties resource="jdbc.properties"></properties>
+
+
+    <!--类型别名映射-->
+    <typeAliases>
+        <!--单个类型映射-->
+        <!--<typeAlias type="com.it.domain.User" alias="user"></typeAlias>-->
+
+        <!--
+            包映射：引入该包中所有的pojo类型
+            resultType和parameterType不需要再配置包名,只需配置类名(不区分大小写)
+        -->
+        <package name="com.it.domain"></package>
+    </typeAliases>
+
+
+    <!--
+        ${jdbc.driver}=ognl表达式,在xml中没有el表达式.
+    -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+
+       <!-- <mapper resource="com/it/mapper/UserDao.xml"/> -->
+
+        <!--
+            通过接口引入配置：
+                  Sql语句配置文件名称与pojo文件必须在同一个包中
+                  Sql语句配置文件名称与pojo接口名称必须一致
+       -->
+        <!--引用一个包中的所有dao接口下的配置文件-->
+        <package name="com.it.dao"></package>
+    </mappers>
+
+</configuration>

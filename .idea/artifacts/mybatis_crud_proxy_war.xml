@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="mybatis-crud-proxy:war">
+    <output-path>$PROJECT_DIR$/mybatis-crud-proxy/target</output-path>
+    <root id="archive" name="myarchetypewebapp.war">
+      <element id="artifact" artifact-name="mybatis-crud-proxy:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.it.dao.AccountDao">
+
+    <select id="findAll" resultType="account">
+        SELECT * from account
+    </select>
+
+
+    <resultMap id="accountUsers" type="accountUser">
+        <result column="uname" property="username"></result>
+    </resultMap>
+
+
+    <select id="findAllAccountUser"  resultMap="accountUsers">
+    <!-- 这句代码查询出了账户对应用户的所有数据,account接收不了那么多数据 -->
+         select * from account a, user u where a.uids = u.uid
+    </select>
+
+
+    <!-- 第一种： 映射account中的user中的属性,user也是pojo! -->
+   <!-- <resultMap id="accounts" type="Account">
+        <id column="id" property="id"></id>
+        <result column="name" property="name"></result>
+        <result column="money" property="money"></result>
+        <result column="uids" property="uids"></result> -->
+        <!--映射user中的属性-->
+    <!--<result column="uid" property="user.id"></result>
+        <result column="uname" property="user.username"></result>
+        <result column="address" property="user.address"></result>
+        <result column="birthday" property="user.birthday"></result>
+        <result column="sex" property="user.sex"></result>
+        <result column="password" property="user.password"></result>
+    </resultMap>  -->
+
+
+    <!-- 第二种：映射单个对象(User),大小写不区分! -->
+    <!-- property=pojo的属性    javaType=映射的类型 -->
+    <resultMap id="accounts" type="Account">
+       <id column="id" property="id"></id>
+       <result column="name" property="name"></result>
+       <result column="money" property="money"></result>
+       <result column="uids" property="uids"></result>
+
+        <association property="user" javaType="user">
+            <id column="uid" property="id"></id>
+            <result column="uname" property="username"></result>
+            <result column="address" property="address"></result>
+            <result column="birthday" property="birthday"></result>
+            <result column="password" property="password"></result>
+            <result column="sex" property="sex"></result>
+        </association>
+    </resultMap>
+
+
+    <!--查询所有的账户,包含用户信息,不创建继承关系pojo-->
+    <select id="findAllAccount" resultMap="accounts">
+        select * from account a, user u where a.uids = u.uid
+    </select>
+
+</mapper>

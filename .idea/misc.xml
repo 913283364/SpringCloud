@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/ECPS" />
+    <file type="web" url="file://$PROJECT_DIR$/mybatis-crud" />
+    <file type="web" url="file://$PROJECT_DIR$/mybatis-crud-dao" />
+    <file type="web" url="file://$PROJECT_DIR$/mybatis-crud-proxy" />
+    <file type="web" url="file://$PROJECT_DIR$/mybatis-mtm" />
+    <file type="web" url="file://$PROJECT_DIR$/mybatis-otm" />
+    <file type="web" url="file://$PROJECT_DIR$/mybatis-oto" />
+    <file type="web" url="file://$PROJECT_DIR$/mybatis01" />
+    <file type="web" url="file://$PROJECT_DIR$/ssm_parent/ssm_web" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/mybatis-01/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis/pom.xml" />
+        <option value="F:/2019黑马Java视频/05_mybatis/mybatis笔记/mybatis_day04/3.代码/mybatis_day04_1_oto_lazy/pom.xml" />
+        <option value="F:/2019黑马Java视频/05_mybatis/mybatis笔记/mybatis_day04/3.代码/mybatis_day04_2_otm_lazy/pom.xml" />
+        <option value="F:/2019黑马Java视频/05_mybatis/mybatis笔记/mybatis_day04/3.代码/mybatis_day04_5_ann_crud/pom.xml" />
+        <option value="F:/2019黑马Java视频/05_mybatis/mybatis笔记/mybatis_day04/3.代码/mybatis_day04_6_ann_oto/pom.xml" />
+        <option value="F:/2019黑马Java视频/05_mybatis/mybatis笔记/mybatis_day04/3.代码/mybatis_day04_7_ann_otm/pom.xml" />
+        <option value="F:/2019黑马Java视频/05_mybatis/mybatis笔记/mybatis_day04/3.代码/mybatis_day04_8_ann_dynamic_sql/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm-parent-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm_parent/pom.xml" />
+        <option value="$PROJECT_DIR$/ECPS/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/ssm-parent-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm-parent-admin/ssm-dao-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm-parent-admin/ssm-domain-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm-parent-admin/ssm-service-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm-parent-admin/ssm-utils-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm-parent-admin/ssm-web-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm_parent/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm_parent/ssm_dao/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm_parent/ssm_domain/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm_parent/ssm_service/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm_parent/ssm_utils/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm_parent/ssm_web/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ECPS" />
+        <module name="mybatis_day04_2_otm_lazy" />
+        <module name="mybatis_day04_5_ann_crud" />
+        <module name="mybatis_day04_6_ann_oto" />
+        <module name="mybatis_day04_7_ann_otm" />
+        <module name="mybatis_oto_lazy" />
+        <module name="mybatiscruddao" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ECPS" target="1.8" />
+      <module name="mybatis" target="1.8" />
+      <module name="mybatis-01" target="1.8" />
+      <module name="mybatis-crud" target="1.8" />
+      <module name="mybatis-crud-dao" target="1.8" />
+      <module name="mybatis-crud-proxy" target="1.8" />
+      <module name="mybatis-mtm" target="1.8" />
+      <module name="mybatis-otm" target="1.8" />
+      <module name="mybatis-oto" target="1.8" />
+      <module name="mybatis01" target="1.8" />
+      <module name="mybatis_day04_1_oto_lazy" target="1.8" />
+      <module name="mybatis_day04_2_otm_lazy" target="1.8" />
+      <module name="mybatis_day04_5_ann_crud" target="1.8" />
+      <module name="mybatis_day04_6_ann_oto" target="1.8" />
+      <module name="mybatis_day04_7_ann_otm" target="1.8" />
+      <module name="mybatis_day04_8_ann_dynamic_sql" target="1.8" />
+      <module name="mybatis_oto_lazy" target="1.8" />
+      <module name="mybatiscruddao" target="1.8" />
+      <module name="ssm" target="1.8" />
+      <module name="ssm-dao-admin" target="1.8" />
+      <module name="ssm-domain-admin" target="1.8" />
+      <module name="ssm-parent-admin" target="1.8" />
+      <module name="ssm-service-admin" target="1.8" />
+      <module name="ssm-utils-admin" target="1.8" />
+      <module name="ssm-web-admin" target="1.8" />
+      <module name="ssm_dao" target="1.8" />
+      <module name="ssm_domain" target="1.8" />
+      <module name="ssm_parent" target="1.8" />
+      <module name="ssm_service" target="1.8" />
+      <module name="ssm_utils" target="1.8" />
+      <module name="ssm_web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

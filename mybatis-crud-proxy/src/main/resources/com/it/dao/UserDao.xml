@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+     动态代理模式：规范必须遵守
+     namespace:必须填写对应接口的包名和类名!
+     select|update|insert|delete: 四个标签 id必须对应dao接口的方法名
+ -->
+<mapper namespace="com.it.dao.UserDao">
+
+    <!-- resultMap：结果映射:一般用户列名与属性名不一致情况  -->
+     <!--  id:唯一标识   type:返回值的类型 -->
+
+    <resultMap id="userList" type="user">
+
+       <!--
+              id:一般写主键的映射
+              property:属性名
+              column:列名
+       -->
+
+     <id property="id" column="uid"></id>
+        <!-- 映射其他属性和列 -->
+       <result property="username" column="uname"></result>
+    </resultMap>
+
+    <!-- 查询全部：指定结果映射 -->
+    <select id="findAll" resultMap="userList">
+     select * from user
+    </select>
+
+
+
+    <!--根据id查询-->
+    <!--
+        id="findById":唯一的标识
+        resultType="com.it.domain.User":返回值类型
+        parameterType:参数类型
+
+        在mybatis中：引入变量 #{}
+    -->
+    <select id="findById" resultType="User" parameterType="java.lang.Integer">
+        select * from user where id = #{id}
+    </select>
+
+
+    <!-- 多条件查询 -->
+    <select id="findByCondition" resultMap="userList" parameterType="user">
+        select * from user where 1=1
+        <if test="username != null">
+            and uname like "%"#{username}"%"
+        </if>
+        <if test="sex != null">
+            and sex = #{sex}
+        </if>
+    </select>
+
+
+    <!-- 根据数组删除多个用户对象 -->
+    <delete id="delByArray" parameterType="integer[]">
+        delete from user where
+        <!--
+            foreach循环标签
+                collection: 参数的类型：如果是集合：list,如果是数组： array
+                open :前缀
+                close:后缀
+                separator: 分隔符
+                item:  循环中的每一个对象
+                index:循环中的索引（ 一般不用）
+        -->
+        <foreach collection="array" open="uid in (" close=")" separator="," item="id">
+            #{id}
+        </foreach>
+    </delete>
+
+
+    <!-- 根据List集合删除多个用户对象 -->
+    <delete id="delByList" parameterType="list">
+        delete from user where
+
+        <foreach collection="list" open="uid in (" close=")" separator="," item="id">
+            #{id}
+        </foreach>
+    </delete>
+
+    <!-- 添加 -->
+     <!--
+         添加:不用写返回值类型(resultType)
+         parameterType:参数传的是对象(User)
+     -->
+   <insert id="save" parameterType="User">
+      insert into user values(null,#{username},#{birthday},#{sex},#{address},#{password})
+   </insert>
+
+
+    <!-- 修改 -->
+    <update id="update" parameterType="User">
+        update user set username=#{username},password=#{password},sex=${sex},address=#{address},birthday=#{birthday}
+        where id = #{id}
+    </update>
+
+
+    <!-- 删除 -->
+    <delete id="del" parameterType="java.lang.Integer">
+        delete from user where id = #{value}
+    </delete>
+
+
+</mapper>
